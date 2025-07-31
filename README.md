@@ -88,5 +88,4 @@ The Temp Smart Fan is an automated, temperature-controlled system that adjusts f
 
 ## 🙌 Credits
 
-**Created by:** Zahara BG  
-A mini cooling system with both brains and a button.
+**Created by:** Zahara BG
