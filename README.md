@@ -74,7 +74,8 @@ The Temp Smart Fan is an automated, temperature-controlled system that adjusts f
 
 *Include a diagram or photo of your breadboard setup here.*
 
-![Smart Fan Circuit](./your-image-name.png)
+<img width="1440" height="715" alt="Copy of DC Motor" src="https://github.com/user-attachments/assets/4fd04560-1e40-4d24-832f-fd955d7afa5f" />
+
 
 ---
 
