@@ -1,6 +1,6 @@
 # Temp Smart Fan Project 🌡️🌀
 
-The **Temp Smart Fan** is an automated temperature-controlled system that adjusts fan activity based on room temperature. Using a TMP36 temperature sensor, the Arduino reads the current temperature and activates a DC fan when it gets too warm—just like a real smart cooling system. It also includes a push button for manual control and an LED indicator to show system status.
+The Temp Smart Fan is an automated, temperature-controlled system that adjusts fan activity based on room temperature. Using a TMP36 temperature sensor, the Arduino reads current conditions and activates a DC fan when it gets too warm—just like a basic smart cooling system. A push button allows for manual override, and an LED indicator shows system status.
 
 ---
 
@@ -10,74 +10,82 @@ The **Temp Smart Fan** is an automated temperature-controlled system that adjust
 - Breadboard
 - TMP36 temperature sensor
 - DC fan (5V or 9V)
-- TIP120 transistor (for switching fan)
-- 1N4001 diode (for flyback protection)
-- 9V battery + battery connector
+- TIP120 transistor (for switching the fan)
+- 1N4001 diode (flyback protection)
+- 9V battery + connector
 - LED (status indicator)
 - Push button (manual control)
 - Resistors:
   - 220Ω (for LED)
   - 10kΩ (pull-down for button)
 - Jumper wires
-- USB cable (for programming)
+- USB cable (for power/programming)
 
 ---
 
 ## 🔧 Installation & Setup
 
-1. **Build the circuit:**
-   - Connect the **TMP36** sensor to 5V, GND, and an analog input (e.g., A0).
-   - Connect the **TIP120** transistor:
-     - Base → Arduino digital pin (through a 1kΩ resistor, if needed)
-     - Collector → negative wire of the fan
-     - Emitter → GND
-   - Connect the **fan's positive lead** to the **9V battery’s positive terminal**.
-   - Place the **1N4001 diode** across the fan terminals (cathode to +) for flyback protection.
-   - Wire the **push button** to a digital input with a 10kΩ pull-down resistor.
-   - Connect the **LED** to a digital pin (e.g., pin 13) with a 220Ω resistor.
+### 1. Build the Circuit
 
-2. **Upload the code:**
-   - Open the Arduino IDE.
-   - Write or paste the sketch that reads temperature, controls the fan, and handles button input.
-   - Select your board and port.
-   - Click **Upload** to program your Arduino.
+**Temperature Sensor (TMP36):**
+- VCC → 5V  
+- GND → GND  
+- OUT → Analog pin A0  
+
+**Fan Control (with TIP120):**
+- Base → Digital pin (e.g., pin 9) through a 1kΩ resistor  
+- Collector → Fan negative lead  
+- Emitter → GND  
+- Fan positive lead → 9V battery positive  
+- 1N4001 diode across fan terminals (cathode to +)  
+
+**LED (Status Indicator):**
+- Anode → Digital pin (e.g., pin 13) through a 220Ω resistor  
+- Cathode → GND  
+
+**Push Button (Manual Control):**
+- One leg → Digital input pin (e.g., pin 2)  
+- Other leg → GND  
+- 10kΩ pull-down resistor on input pin  
+
+### 2. Upload the Code
+
+- Open the Arduino IDE.
+- Paste or write your sketch (temperature reading, fan logic, manual control).
+- Select your board and port.
+- Upload the code.
 
 ---
 
 ## 💡 How It Works
 
-- The **TMP36** sensor reads the ambient temperature and sends an analog voltage to the Arduino.
-- The Arduino converts this voltage to Celsius and checks if the temperature exceeds a set threshold (e.g., 25°C).
-- If the temperature is too high:
-  - The **TIP120** transistor switches on, powering the fan from the 9V battery.
-  - The **LED** turns on to indicate active cooling.
-- If the temperature drops below the threshold, the fan and LED turn off.
-- A **push button** can manually override or toggle the fan state, depending on the code logic.
+1. The TMP36 reads ambient temperature and sends analog voltage to the Arduino.
+2. The Arduino calculates the temperature in Celsius.
+3. If the temperature exceeds a set threshold (e.g., 25°C):
+   - The transistor activates and powers the fan.
+   - The LED turns on to show the fan is active.
+4. When the temperature drops below the threshold:
+   - The fan and LED turn off.
+5. The push button can be used to override automatic control (depends on your code logic).
 
 ---
 
-## 🖼️ Images / Videos
+## 🖼️ Circuit Overview
 
-> *(Insert your project media here to show it in action.)*  
-Examples:
-- `images/temp-smart-fan-setup.jpg`
-- `videos/temp-smart-fan-demo.mp4`
+*Include a diagram or photo of your breadboard setup here.*
+
+![Smart Fan Circuit](./your-image-name.png)
 
 ---
 
 ## 🔗 Simulation Links
 
-- [Tinkercad Simulation (if available)](https://www.tinkercad.com/)  
-> *Paste your link here if you built a virtual version of the project.*
+- [Tinkercad Simulation](https://www.tinkercad.com/)  
+*(Paste your exact link here if available.)*
 
 ---
 
 ## 🙌 Credits
 
 **Created by:** Zahara BG  
-Inspired by home automation and real-world HVAC control systems.  
-Special thanks to online Arduino communities for tutorials on sensor reading and transistor switching.
-
----
-
-> *To upgrade this project, consider adding an LCD display to show real-time temperature or using a relay for larger fans.*
+A mini cooling system with both brains and a button.
